@@ -1,0 +1,13 @@
+<h1>{{ titulo }}</h1>
+
+<div class="container">
+    <label for="index-sequence">Informe o número desejado de execuções da sequência: </label>
+    <input id="index-sequence" type="number" min="0" [(ngModel)]="indexSequence" />
+</div>
+
+<button type="button" (click)="this.getSequenceByIndex(indexSequence)">Executar</button>
+
+<div *ngIf="result" class="container">
+    <label for="index-result">O resultado da sequência para {{indexSequence}} é:  </label>
+    <div id="index-result" > {{result}} </div>
+</div>
