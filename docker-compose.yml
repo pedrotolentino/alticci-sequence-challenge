@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  backend:
+    image: alticci-sequence/backend
+    build: 
+      context: ./alticci-sequence
+      dockerfile: src/main/docker/Dockerfile.jvm
+    ports:
+      - "8080:8080"
+  frontend:
+    image: alticci-sequence/frontend
+    build: 
+      context: ./alticci-sequence-page
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
